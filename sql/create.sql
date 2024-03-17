@@ -5,16 +5,16 @@ CREATE TABLE users (
   userName VARCHAR(20),
   profileImg VARCHAR(200),
   created DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-  Updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE,
+  Updated DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
   PRIMARY KEY(userId)
 );
 
 INSERT INTO users(userId, userName, profileImg) VALUES
-('jaemin104', '김재민', 'image1'),
-('jaemin105', '김재맨', 'image2'),
-('asd', '누구', 'image3'),
-('rootpark', '박근원', 'image4'),
-('gijae', '김기재', 'image5');
+('jaemin104', 'kim', 'image1'),
+('jaemin105', 'jae', 'image2'),
+('asd', 'min', 'image3'),
+('rootpark', 'park', 'image4'),
+('gijae', 'gijaeee', 'image5');
 
 SELECT userId, userName
 FROM users
@@ -26,8 +26,8 @@ FROM users
 WHERE userId = 'asd';
 
 DELETE FROM users
-WHERE userName = '박근원';
+WHERE userName = 'park';
 
 UPDATE users
 SET userId = 'dsa'
-WHERE userName = '김기재';
+WHERE userName = 'gijaeee';
